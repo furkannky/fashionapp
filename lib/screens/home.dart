@@ -167,8 +167,8 @@ class _HomeState extends State<Home> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text("Most Popular", style: textTheme.headline3),
-                      Text("See all", style: textTheme.headline4),
+                      Text("Most Popular", style: textTheme.displaySmall),
+                      Text("See all", style: textTheme.headlineMedium),
                     ],
                   ),
                 ),
@@ -309,13 +309,13 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.only(top: 10.0),
             child: Text(
               data.name,
-              style: theme.headline2,
+              style: theme.displayMedium,
             ),
           ),
           RichText(
             text: TextSpan(
               text: "€",
-              style: theme.subtitle2?.copyWith(
+              style: theme.titleSmall?.copyWith(
                 color: primaryColor,
                 fontSize: 26,
                 fontWeight: FontWeight.bold,

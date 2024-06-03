@@ -212,7 +212,7 @@ class _CartState extends State<Cart> {
                                             TextSpan(
                                               text: current.price.toString(),
                                               style:
-                                                  textTheme.subtitle2?.copyWith(
+                                                  textTheme.titleSmall?.copyWith(
                                                 fontSize: 17,
                                                 fontWeight: FontWeight.w600,
                                               ),

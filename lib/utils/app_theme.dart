@@ -4,30 +4,30 @@ class AppTheme {
   static ThemeData appTheme = ThemeData(
     fontFamily: "AlegreyaSans",
     textTheme: const TextTheme(
-      headline1: TextStyle(
+      displayLarge: TextStyle(
         fontSize: 38,
         color: Colors.black,
         fontWeight: FontWeight.w500,
       ),
-      subtitle1: TextStyle(color: Colors.black, fontSize: 15),
-      headline2: TextStyle(
+      titleMedium: TextStyle(color: Colors.black, fontSize: 15),
+      displayMedium: TextStyle(
         fontSize: 16,
         color: Colors.black,
         fontWeight: FontWeight.w400,
       ),
-      subtitle2: TextStyle(
+      titleSmall: TextStyle(
         fontSize: 17,
         color: Colors.black,
         fontWeight: FontWeight.w500,
       ),
-      headline3: TextStyle(
+      displaySmall: TextStyle(
         color: Colors.black,
         fontSize: 18,
         fontWeight: FontWeight.bold,
       ),
-      headline4: TextStyle(
+      headlineMedium: TextStyle(
           fontSize: 14, fontWeight: FontWeight.w400, color: Colors.blue),
-      headline5: TextStyle(fontWeight: FontWeight.w500, fontSize: 17),
+      headlineSmall: TextStyle(fontWeight: FontWeight.w500, fontSize: 17),
     ),
   );
 }

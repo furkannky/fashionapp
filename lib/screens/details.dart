@@ -94,7 +94,7 @@ class _DetailsState extends State<Details> {
                         children: [
                           Text(
                             current.name,
-                            style: textTheme.headline3?.copyWith(fontSize: 22),
+                            style: textTheme.displaySmall?.copyWith(fontSize: 22),
                           ),
                           ReuseableText(
                             price: current.price,
@@ -114,7 +114,7 @@ class _DetailsState extends State<Details> {
                             width: 5,
                           ),
                           Text(current.star.toString(),
-                              style: textTheme.headline5),
+                              style: textTheme.headlineSmall),
                           const SizedBox(
                             width: 8,
                           ),
@@ -145,7 +145,7 @@ class _DetailsState extends State<Details> {
                     const EdgeInsets.only(left: 10.0, top: 18.0, bottom: 10.0),
                 child: Text(
                   "Select Size",
-                  style: textTheme.headline3,
+                  style: textTheme.displaySmall,
                 ),
               ),
             ),
@@ -207,7 +207,7 @@ class _DetailsState extends State<Details> {
                     const EdgeInsets.only(left: 10.0, top: 18.0, bottom: 10.0),
                 child: Text(
                   "Select Color",
-                  style: textTheme.headline3,
+                  style: textTheme.displaySmall,
                 ),
               ),
             ),
