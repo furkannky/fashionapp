@@ -34,7 +34,7 @@ List<CategoriesModel> categories = [
 
 List<BaseModel> mainList = [
   BaseModel(
-    imageUrl: "assets/images/mens.jpg",
+    imageUrl: "assets/images/img1.webp",
     name: "Casual Jeans Pant",
     price: 155.99,
     review: 3.6,
@@ -43,8 +43,8 @@ List<BaseModel> mainList = [
     value: 1,
   ),
   BaseModel(
-    imageUrl: "assets/images/blazer.jpg",
-    name: "blue Coat",
+    imageUrl: "assets/images/img2.jpeg",
+    name: "tommy shelby",
     price: 143.99,
     review: 5.6,
     star: 5.0,
@@ -52,7 +52,7 @@ List<BaseModel> mainList = [
     value: 1,
   ),
   BaseModel(
-    imageUrl: "assets/images/jacjket.jpg",
+    imageUrl: "assets/images/img3.jpg",
     name: "Deep Green Jacket",
     price: 212.99,
     review: 2.6,
@@ -61,7 +61,7 @@ List<BaseModel> mainList = [
     value: 1,
   ),
   BaseModel(
-    imageUrl: "assets/images/shirt.jpg",
+    imageUrl: "assets/images/img4.avif",
     name: "Orange Shirt",
     price: 432.99,
     review: 1.4,
@@ -70,7 +70,7 @@ List<BaseModel> mainList = [
     value: 1,
   ),
   BaseModel(
-    imageUrl: "assets/images/sw.jpg",
+    imageUrl: "assets/images/img5.jpg",
     name: "Grey Pullover",
     price: 112.99,
     review: 4.2,
@@ -79,7 +79,7 @@ List<BaseModel> mainList = [
     value: 1,
   ),
   BaseModel(
-    imageUrl: "assets/images/women.jpg",
+    imageUrl: "assets/images/img6.jpg",
     name: "Pullover Sleeveless",
     price: 320.99,
     review: 2.1,
@@ -106,7 +106,6 @@ List<BaseModel> mainList = [
     value: 1,
   ),
 ];
-
 
 List<BaseModel> itemsOnCart = [];
 List<BaseModel> itemsOnSearch = [];

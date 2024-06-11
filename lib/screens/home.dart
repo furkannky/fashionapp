@@ -182,77 +182,84 @@ class _HomeState extends State<Home> {
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height * 0.44,
                   child: GridView.builder(
-                      physics: const BouncingScrollPhysics(),
-                      itemCount: mainList.length,
-                      gridDelegate:
-                          const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2, childAspectRatio: 0.63),
-                      itemBuilder: (context, index) {
-                        BaseModel current = mainList[index];
-                        return GestureDetector(
-                          onTap: (() => Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) {
-                                  FocusManager.instance.primaryFocus?.unfocus();
-                                  return Details(
-                                    data: current,
-                                    isCameFromMostPopularPart: true,
-                                  );
-                                }),
-                              )),
-                          child: Hero(
-                            tag: current.imageUrl,
-                            child: Column(
-                              children: [
-                                Container(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.5,
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.3,
-                                  margin: const EdgeInsets.all(10),
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(3),
-                                    image: DecorationImage(
-                                      image: AssetImage(current.imageUrl),
-                                      fit: BoxFit.cover,
-                                    ),
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        offset: Offset(0, 4),
-                                        blurRadius: 4,
-                                        color: Color.fromARGB(61, 0, 0, 0),
-                                      )
-                                    ],
+                    physics: const BouncingScrollPhysics(),
+                    itemCount: mainList.length,
+                    // Ekran genişliğine ve boyuna bağlı olarak dinamik ızgara oluşturun
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount:
+                          MediaQuery.of(context).size.width > 600 ? 4 : 2,
+                      // Ekran genişliğine bağlı olarak sütun sayısını ayarlayın
+                      childAspectRatio:
+                          MediaQuery.of(context).size.width > 600 ? 0.5 : 0.63,
+                      // Ekran genişliğine bağlı olarak öğe en-boy oranını ayarlayın
+                    ),
+                    itemBuilder: (context, index) {
+                      BaseModel current = mainList[index];
+                      return GestureDetector(
+                        onTap: (() => Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) {
+                                FocusManager.instance.primaryFocus?.unfocus();
+                                return Details(
+                                  data: current,
+                                  isCameFromMostPopularPart: true,
+                                );
+                              }),
+                            )),
+                        child: Hero(
+                          tag: current.imageUrl,
+                          child: Column(
+                            children: [
+                              Container(
+                                width: MediaQuery.of(context).size.width * 0.8,
+                                height: MediaQuery.of(context).size.width * 0.6,
+                                margin: const EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(3),
+                                  image: DecorationImage(
+                                    image: AssetImage(current.imageUrl),
+                                    fit: BoxFit.cover,
                                   ),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                      offset: Offset(0, 4),
+                                      blurRadius: 4,
+                                      color: Color.fromARGB(61, 0, 0, 0),
+                                    )
+                                  ],
                                 ),
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 2.0),
-                                  child: Text(
-                                    current.name,
-                                    style: textTheme.displayMedium,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 2.0),
+                                child: Text(
+                                  current.name,
+                                  style: textTheme.displayMedium,
+                                ),
+                              ),
+                              RichText(
+                                text: TextSpan(
+                                  text: "€",
+                                  style: textTheme.titleSmall?.copyWith(
+                                    color: primaryColor,
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
                                   ),
+                                  children: [
+                                    TextSpan(
+                                      text: current.price.toString(),
+                                      style: textTheme.titleSmall?.copyWith(
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    )
+                                  ],
                                 ),
-                                RichText(
-                                    text: TextSpan(
-                                        text: "€",
-                                        style: textTheme.titleSmall?.copyWith(
-                                          color: primaryColor,
-                                          fontSize: 20,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                        children: [
-                                      TextSpan(
-                                        text: current.price.toString(),
-                                        style: textTheme.titleSmall?.copyWith(
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      )
-                                    ])),
-                              ],
-                            ),
+                              ),
+                            ],
                           ),
-                        );
-                      }),
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ),
             ],
