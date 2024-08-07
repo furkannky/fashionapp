@@ -9,4 +9,4 @@ void main() => runApp(
         debugShowCheckedModeBanner: false,
         home: const MainWrapper(),
       ),
-    );
+    ); // şkvnsdkşvnşs
